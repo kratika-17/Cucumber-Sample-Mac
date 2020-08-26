@@ -26,27 +26,29 @@ public class Testcase1 extends GetObj {
 	@SuppressWarnings("static-access")
 	public Testcase1(WebDriverFactory DriverFactory) throws Exception
 	{
+		
 		super(DriverFactory);
+		System.out.println("Kratika");
 		webDriverFactory = DriverFactory;
 		this.driver = webDriverFactory.getWebDriver();	
 	}
 	
-	@Before()
-	public void beforeScenario(Scenario scenario) throws InterruptedException {
-		try {
-		ExcelSheet exl = new ExcelSheet();
-        int noOfRows = exl.totalrows("NDTV", "TestCase_Configuration");
-        int RowNumber = exl.getRowNumber("NDTV", "TestCase_Configuration", scenario.getName());
-        dataObj = getEachExcelRowDataIntoHashMapObj(exl, "TestCase_Configuration", RowNumber, "NDTV");
-        
-		}
-		
-		catch (Exception e) {
-            
-        }
-		
-		
-	}
+//	@Before()
+//	public void beforeScenario(Scenario scenario) throws InterruptedException {
+//		try {
+//		ExcelSheet exl = new ExcelSheet();
+//        int noOfRows = exl.totalrows("NDTV", "TestCase_Configuration");
+//        int RowNumber = exl.getRowNumber("NDTV", "TestCase_Configuration", scenario.getName());
+//        dataObj = getEachExcelRowDataIntoHashMapObj(exl, "TestCase_Configuration", RowNumber, "NDTV");
+//        
+//		}
+//		
+//		catch (Exception e) {
+//            
+//        }
+//		
+//		
+//	}
 	
 	
 	@Given("^Open Browser and enter url \"([^\"]*)\"$")
@@ -57,7 +59,7 @@ public class Testcase1 extends GetObj {
 		    }
 	@Then("^Click on horizontal ellpsis menu$")
 	public void click_on_horizontal_ellpsis_menu() throws Throwable {
-    	
+    		Thread.sleep(2000);
           element("EllpsisMenu").click();
           
     }
@@ -72,7 +74,8 @@ public class Testcase1 extends GetObj {
 
 	@When("^Enter the name of the city$")
 	public void Enter_the_name_of_the_city() throws Throwable {
-          element("PinYourCitySelectBox").sendKeys(dataObj.get("City Name"));
+          element("PinYourCitySelectBox").sendKeys("Ajmer");
+          //dataObj.get("City Name")
           Thread.sleep(1000);
           
     }

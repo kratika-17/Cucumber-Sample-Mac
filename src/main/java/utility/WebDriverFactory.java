@@ -25,12 +25,12 @@ public class WebDriverFactory {
 	}
 	public  static WebDriver create(String type) throws IllegalAccessException
 	{
-
+		System.out.println("Kratika");
 		switch(type.toLowerCase()) {
 		case "chrome":
 
 
-			String exePath = System.getProperty("user.dir")+"\\src\\test\\resources\\WebDrivers\\chromedriver.exe";
+			String exePath = System.getProperty("user.home")+"/development/cucumber-sample/src/test/resources/WebDrivers/chromedriver";
 
 			System.setProperty("webdriver.chrome.driver", exePath);
 
@@ -45,7 +45,7 @@ public class WebDriverFactory {
 
 			//options.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.IGNORE);
 			//options.setCapability("exit_type", "none");				
-			options.addArguments("user-data-dir=C:/Users/Raghav Sukhwal/AppData/Local/Google/Chrome/User Data/Default");
+			//options.addArguments("user-data-dir=C:/Users/Raghav Sukhwal/AppData/Local/Google/Chrome/User Data/Default");
 
 
 			//options.addArguments("headless","window-size=1400,800"); //to execute in headless mode
@@ -54,6 +54,7 @@ public class WebDriverFactory {
 
 
 			driver = new ChromeDriver(options);
+			System.out.println("Kratika1");
 			driver.manage().deleteAllCookies();
 			driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
 			//driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);

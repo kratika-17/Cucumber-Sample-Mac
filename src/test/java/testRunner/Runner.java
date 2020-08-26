@@ -48,8 +48,8 @@ import org.testng.annotations.Test;
 //import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 
-//import io.cucumber.junit.*;
-import io.cucumber.testng.*;
+import io.cucumber.junit.*;
+//import io.cucumber.testng.*;
 
 
 //import utility.CommonMethods;
@@ -60,7 +60,7 @@ import io.cucumber.testng.*;
 
 @SuppressWarnings("unused")
 
-//@RunWith(Cucumber.class)
+@RunWith(Cucumber.class)
 
 
 //@ExtendedCucumberOptions(
@@ -102,6 +102,11 @@ import io.cucumber.testng.*;
 		)
 
 //@Listeners(utility.ListnerTestNG.class)
-public class Runner extends AbstractTestNGCucumberTests{
-
+public class Runner {
+	
 }
+
+
+//extends AbstractTestNGCucumberTests{
+//
+//}

@@ -30,10 +30,13 @@ Properties prop;
         prop = new Properties();
         webDriverFactory = driverFactory;
         this.driver = webDriverFactory.getWebDriver();
+        System.out.println("Kratika2");
         
          
         try {
-        	File f = new File("src\\main\\java\\ObjectRepository");
+        	File f = new File("src/main/java/ObjectRepository");
+        	
+        	System.out.println(f);
         	
         	FileFilter f1 = new FileFilter() {   			
     			@Override
@@ -42,6 +45,7 @@ Properties prop;
     			}
     		};
     		File[] flist = f.listFiles(f1);
+    		System.out.println(flist);
     		    		
     		for (File temp:flist)
     		{
@@ -60,16 +64,21 @@ Properties prop;
    
    
       public WebElement element(String strElement) throws Exception {
+    	  System.out.println("Manish Pathak" + strElement) ;
+    	  
          
         // retrieve the specified object from the object list
-        String locator = prop.getProperty(strElement);        
+        String locator = prop.getProperty(strElement);  
+        System.out.println("Manish Pathak" + locator) ;
+        
         // extract the locator type and value from the object
         String locatorType = locator.split(";")[0];
         String locatorValue = locator.split(";")[1];
      //   System.out.println(By.xpath("AppLogo"));
-         
+        System.out.println("Manish Pathak" + locatorType) ;
+        System.out.println("Manish Pathak" + locatorValue) ;
         // for testing and debugging purposes
-        System.out.println("Retrieving object of type '" + locatorType + "' and value '" + locatorValue + "' from the Object Repository");
+       // System.out.println("Retrieving object of type '" + locatorType + "' and value '" + locatorValue + "' from the Object Repository");
      
    //     wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='text3']")));
         try {
@@ -77,8 +86,12 @@ Properties prop;
 
         	if(locatorType.equalsIgnoreCase("Id"))
         		return driver.findElement(By.id(locatorValue));           
-        	else if(locatorType.equalsIgnoreCase("Xpath")) 
-        			return driver.findElement(By.xpath(locatorValue)); 
+        	else if(locatorType.equalsIgnoreCase("Xpath")) {
+        		System.out.println("Manish Pathak" + locatorType) ;
+        		 WebElement b=driver.findElement(By.xpath(locatorValue));
+        		 System.out.println("Manish Pathak" + b) ;
+        			return b;
+        	} 
 //        		}catch(Exception e) {
 //        			driver.navigate().refresh();
 //
