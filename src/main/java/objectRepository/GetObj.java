@@ -33,8 +33,8 @@ Properties prop;
         this.driver = webDriverFactory.getWebDriver();
         System.out.println("Kratika2");
         
-         List<String> list=new List<String>();
-         List<String> list1 =new ArrayList<String>();
+        // List<String> list=new List<String>();
+         //List<String> list1 =new ArrayList<String>();
          
          
          
