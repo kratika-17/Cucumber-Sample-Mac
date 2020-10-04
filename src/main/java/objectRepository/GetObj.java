@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileFilter;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
@@ -32,6 +33,13 @@ Properties prop;
         this.driver = webDriverFactory.getWebDriver();
         System.out.println("Kratika2");
         
+         List<String> list=new List<String>();
+         List<String> list1 =new ArrayList<String>();
+         
+         
+         
+         
+         
          
         try {
         	File f = new File("src/main/java/ObjectRepository");
